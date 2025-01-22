@@ -1,0 +1,2 @@
+module AiAgentsHelper
+end

@@ -1,0 +1,18 @@
+<h1>Stored Queries and Responses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Query</th>
+      <th>AI Response</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queries.each do |query| %>
+    <tr>
+      <td><%= query.user_query %></td>
+      <td><%= query.ai_response %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
