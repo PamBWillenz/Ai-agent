@@ -1,18 +1,33 @@
-<h1>Stored Queries and Responses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User Query</th>
-      <th>AI Response</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @queries.each do |query| %>
-    <tr>
-      <td><%= query.user_query %></td>
-      <td><%= query.ai_response %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg text-lg leading-relaxed">
+  <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Stored Queries and Responses</h1>
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-200">
+      <thead>
+        <tr>
+          <th class="py-3 px-6 bg-blue-100 text-left text-xs font-semibold text-blue-700 uppercase tracking-wider border-r border-gray-200">User Query</th>
+          <th class="py-3 px-6 bg-green-100 text-left text-xs font-semibold text-green-700 uppercase tracking-wider">AI Response</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+        <% @queries.each do |query| %>
+        <tr class="border-b border-gray-200 hover:bg-gray-50">
+          <td class="py-4 px-6 bg-blue-50 border-r border-gray-200">
+            <div class="font-medium text-blue-800"><%= query.user_query %></div>
+          </td>
+          <td class="py-4 px-6 bg-green-50">
+            <% if query.ai_response.present? %>
+            <ul class="list-disc pl-5 space-y-1">
+              <% query.ai_response.split("\n").each do |item| %>
+              <li class="text-green-800"><%= item %></li>
+              <% end %>
+            </ul>
+            <% else %>
+            <span class="text-gray-500">No response available.</span>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

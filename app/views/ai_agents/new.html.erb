@@ -1,15 +1,17 @@
-<h1>Ask the AI Agent</h1>
+<div class="max-w-md mx-auto p-4 bg-white shadow rounded text-lg leading-relaxed">
+  <h1 class="text-2xl font-bold mb-4">Ask the AI Agent</h1>
 
-<%= form_with url: invoke_agent_ai_agents_path, method: :post, data: { turbo_frame: "response_frame" } do %>
-<div>
-  <%= label_tag :query, "Enter your query:" %>
-  <%= text_field_tag :query, nil, required: true %>
-</div>
-<div>
-  <%= submit_tag "Ask AI" %>
-</div>
-<% end %>
+  <%= form_with url: invoke_agent_ai_agents_path, method: :post, data: { turbo_frame: "response_frame" }, class: "space-y-4" do %>
+  <div>
+    <%= label_tag :query, "Enter your query:", class: "block font-semibold mb-1" %>
+    <%= text_field_tag :query, nil, required: true, class: "w-full p-2 border border-gray-300 rounded" %>
+  </div>
+  <div>
+    <%= submit_tag "Ask AI", class: "px-4 py-2 bg-blue-600 text-white rounded" %>
+  </div>
+  <% end %>
 
-<div id="response_frame">
-  <!-- The response will be displayed here -->
+  <div id="response_frame" class="mt-4">
+    <!-- The response will be displayed here -->
+  </div>
 </div>
