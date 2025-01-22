@@ -1,6 +1,6 @@
 <h1>Ask the AI Agent</h1>
 
-<%= form_with url: ai_agents_invoke_agent_path, method: :post, data: { turbo_frame: "response_frame" } do %>
+<%= form_with url: invoke_agent_ai_agents_path, method: :post, data: { turbo_frame: "response_frame" } do %>
 <div>
   <%= label_tag :query, "Enter your query:" %>
   <%= text_field_tag :query, nil, required: true %>

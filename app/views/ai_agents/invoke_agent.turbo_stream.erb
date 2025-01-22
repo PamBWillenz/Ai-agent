@@ -1,5 +1,8 @@
-<turbo-stream action="update" target="response_frame">
-  <template>
-    <p><strong>Response:</strong> <%= @response %></p>
-  </template>
-</turbo-stream>
+<%= turbo_stream.update "response_frame" do %>
+  <div class="mt-4 p-4 bg-gray-100 rounded">
+    <h3 class="font-bold">Response:</h3>
+    <div class="mt-2">
+      <%= simple_format(@ai_response) %>
+    </div>
+  </div>
+<% end %>
